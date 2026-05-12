@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #ffffff;
+    color: #2F4F4F;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  /* Dot-grid pattern for hero background */
+  .dot-grid {
+    background-image: radial-gradient(
+      circle,
+      rgba(0, 206, 209, 0.18) 1px,
+      transparent 1px
+    );
+    background-size: 30px 30px;
+  }
+
+  /* Fine line grid — for lighter sections */
+  .line-grid {
+    background-image:
+      linear-gradient(rgba(47, 79, 79, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(47, 79, 79, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Glow variants */
+  .glow-electric-sm {
+    box-shadow: 0 0 12px rgba(0, 206, 209, 0.3);
+  }
+  .glow-electric {
+    box-shadow: 0 0 24px rgba(0, 206, 209, 0.45);
+  }
+  .glow-electric-lg {
+    box-shadow: 0 0 40px rgba(0, 206, 209, 0.55);
+  }
+
+  /* Scroll animation helpers */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
