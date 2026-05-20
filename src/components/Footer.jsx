@@ -37,14 +37,14 @@ export default function Footer() {
 
           {/* Contact */}
           <a
-            href="mailto:techchazan@gmail.com"
+            href="mailto:contato@chazantech.com.br"
             className="text-white/40 hover:text-electric text-sm transition-colors duration-200 flex items-center gap-2"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
               <polyline points="22,6 12,13 2,6" />
             </svg>
-            techchazan@gmail.com
+            contato@chazantech.com.br
           </a>
         </div>
 

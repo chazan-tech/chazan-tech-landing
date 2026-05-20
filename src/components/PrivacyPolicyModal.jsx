@@ -81,8 +81,8 @@ export default function PrivacyPolicyModal({ onClose }) {
 
           <Section title="7. Contato">
             Para exercer seus direitos ou esclarecer dúvidas sobre esta política, entre em contato pelo e-mail{' '}
-            <a href="mailto:techchazan@gmail.com" className="text-electric hover:text-electric-light transition-colors underline underline-offset-2">
-              techchazan@gmail.com
+            <a href="mailto:contato@chazantech.com.br" className="text-electric hover:text-electric-light transition-colors underline underline-offset-2">
+              contato@chazantech.com.br
             </a>.
           </Section>
 

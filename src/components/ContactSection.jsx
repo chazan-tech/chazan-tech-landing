@@ -103,7 +103,7 @@ export default function ContactSection() {
                     </svg>
                   ),
                   label: 'E-mail',
-                  value: 'techchazan@gmail.com',
+                  value: 'contato@chazantech.com.br',
                 },
                 {
                   icon: (
