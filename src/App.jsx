@@ -1,15 +1,17 @@
-import Navbar         from './components/Navbar'
-import Hero           from './components/Hero'
-import Process        from './components/Process'
-import Services       from './components/Services'
-import SavingsSection from './components/SavingsSection'
-import WhyChazan      from './components/WhyChazan'
-import FAQ            from './components/FAQ'
-import ContactSection from './components/ContactSection'
-import WhatsAppWidget from './components/WhatsAppWidget'
-import CookieBanner      from './components/CookieBanner'
-import ExitIntentPopup  from './components/ExitIntentPopup'
-import Footer         from './components/Footer'
+import { lazy, Suspense } from 'react'
+import Navbar from './components/Navbar'
+import Hero   from './components/Hero'
+
+const Process        = lazy(() => import('./components/Process'))
+const Services       = lazy(() => import('./components/Services'))
+const SavingsSection = lazy(() => import('./components/SavingsSection'))
+const WhyChazan      = lazy(() => import('./components/WhyChazan'))
+const FAQ            = lazy(() => import('./components/FAQ'))
+const ContactSection = lazy(() => import('./components/ContactSection'))
+const Footer         = lazy(() => import('./components/Footer'))
+const WhatsAppWidget = lazy(() => import('./components/WhatsAppWidget'))
+const CookieBanner   = lazy(() => import('./components/CookieBanner'))
+const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'))
 
 export default function App() {
   return (
@@ -17,17 +19,21 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Process />
-        <Services />
-        <SavingsSection />
-        <WhyChazan />
-        <FAQ />
-        <ContactSection />
+        <Suspense fallback={null}>
+          <Process />
+          <Services />
+          <SavingsSection />
+          <WhyChazan />
+          <FAQ />
+          <ContactSection />
+        </Suspense>
       </main>
-      <Footer />
-      <WhatsAppWidget />
-      <CookieBanner />
-      <ExitIntentPopup />
+      <Suspense fallback={null}>
+        <Footer />
+        <WhatsAppWidget />
+        <CookieBanner />
+        <ExitIntentPopup />
+      </Suspense>
     </div>
   )
 }

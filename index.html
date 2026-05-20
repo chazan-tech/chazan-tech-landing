@@ -10,13 +10,16 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#2F4F4F" />
 
-    <title>Chazan Tech — Sistemas que otimizam operações</title>
+    <!-- Prevent white flash: match the Hero background before React mounts -->
+    <style>html,body,#root{background:#2F4F4F}</style>
+
+    <title>Chazan Tech | Sistemas sob medida com IA para empresas</title>
 
     <!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
     <meta property="og:type"        content="website" />
     <meta property="og:locale"      content="pt_BR" />
     <meta property="og:site_name"   content="Chazan Tech" />
-    <meta property="og:title"       content="Chazan Tech — Sistemas que otimizam operações" />
+    <meta property="og:title"       content="Chazan Tech | Sistemas sob medida com IA para empresas" />
     <meta property="og:description" content="Sistemas sob medida com IA integrada que eliminam gargalos, automatizam processos e devolvem resultados mensuráveis para sua operação." />
     <meta property="og:url"         content="https://chazantech.com.br" />
     <meta property="og:image"       content="https://chazantech.com.br/og-image.png" />
@@ -26,17 +29,45 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content="Chazan Tech — Sistemas que otimizam operações" />
+    <meta name="twitter:title"       content="Chazan Tech | Sistemas sob medida com IA para empresas" />
     <meta name="twitter:description" content="Sistemas sob medida que eliminam gargalos, automatizam processos e devolvem tempo e margem para sua operação." />
     <meta name="twitter:image"       content="https://chazantech.com.br/og-image.png" />
 
     <link rel="canonical" href="https://chazantech.com.br" />
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Chazan Tech",
+      "url": "https://chazantech.com.br",
+      "logo": "https://chazantech.com.br/logo.png",
+      "description": "Sistemas sob medida com IA integrada que eliminam gargalos, automatizam processos e devolvem resultados mensuráveis para sua operação.",
+      "email": "techchazan@gmail.com",
+      "foundingLocation": {
+        "@type": "Place",
+        "addressCountry": "BR"
+      },
+      "sameAs": [],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "techchazan@gmail.com",
+        "availableLanguage": "Portuguese"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Desenvolvimento de sistemas sob medida com IA"
+      }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Non-blocking font load: page renders immediately with system font fallback -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>
