@@ -1,17 +1,17 @@
 import { lazy, Suspense } from 'react'
-import Navbar from './components/Navbar'
-import Hero   from './components/Hero'
+import Navbar         from './components/Navbar'
+import Hero           from './components/Hero'
+import Process        from './components/Process'
+import Services       from './components/Services'
+import SavingsSection from './components/SavingsSection'
+import WhyChazan      from './components/WhyChazan'
+import CTASection     from './components/CTASection'
+import FAQ            from './components/FAQ'
+import ContactSection from './components/ContactSection'
+import Footer         from './components/Footer'
 
-const Process        = lazy(() => import('./components/Process'))
-const Services       = lazy(() => import('./components/Services'))
-const SavingsSection = lazy(() => import('./components/SavingsSection'))
-const WhyChazan      = lazy(() => import('./components/WhyChazan'))
-const CTASection     = lazy(() => import('./components/CTASection'))
-const FAQ            = lazy(() => import('./components/FAQ'))
-const ContactSection = lazy(() => import('./components/ContactSection'))
-const Footer         = lazy(() => import('./components/Footer'))
-const WhatsAppWidget = lazy(() => import('./components/WhatsAppWidget'))
-const CookieBanner   = lazy(() => import('./components/CookieBanner'))
+const WhatsAppWidget  = lazy(() => import('./components/WhatsAppWidget'))
+const CookieBanner    = lazy(() => import('./components/CookieBanner'))
 const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'))
 
 export default function App() {
@@ -20,18 +20,16 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Suspense fallback={null}>
-          <Process />
-          <Services />
-          <SavingsSection />
-          <WhyChazan />
-          <CTASection />
-          <FAQ />
-          <ContactSection />
-        </Suspense>
+        <Process />
+        <Services />
+        <SavingsSection />
+        <WhyChazan />
+        <CTASection />
+        <FAQ />
+        <ContactSection />
       </main>
+      <Footer />
       <Suspense fallback={null}>
-        <Footer />
         <WhatsAppWidget />
         <CookieBanner />
         <ExitIntentPopup />
