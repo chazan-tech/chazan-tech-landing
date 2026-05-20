@@ -6,6 +6,7 @@ const Process        = lazy(() => import('./components/Process'))
 const Services       = lazy(() => import('./components/Services'))
 const SavingsSection = lazy(() => import('./components/SavingsSection'))
 const WhyChazan      = lazy(() => import('./components/WhyChazan'))
+const CTASection     = lazy(() => import('./components/CTASection'))
 const FAQ            = lazy(() => import('./components/FAQ'))
 const ContactSection = lazy(() => import('./components/ContactSection'))
 const Footer         = lazy(() => import('./components/Footer'))
@@ -24,6 +25,7 @@ export default function App() {
           <Services />
           <SavingsSection />
           <WhyChazan />
+          <CTASection />
           <FAQ />
           <ContactSection />
         </Suspense>
