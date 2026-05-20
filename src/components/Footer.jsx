@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom'
 import Logo from './Logo'
 
 const NAV_LINKS = [
-  { href: '#como-funciona', label: 'Como funciona' },
-  { href: '#servicos',      label: 'Serviços'       },
-  { href: '#diferenciais',  label: 'Por que nós'    },
-  { href: '#faq',           label: 'FAQ'            },
-  { href: '#contato',       label: 'Contato'        },
+  { href: '/#como-funciona', label: 'Como funciona' },
+  { href: '/#servicos',      label: 'Serviços'       },
+  { href: '/#diferenciais',  label: 'Por que nós'    },
+  { href: '/#faq',           label: 'FAQ'            },
+  { href: '/#contato',       label: 'Contato'        },
 ]
 
 export default function Footer() {
@@ -16,7 +17,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <Logo />
+            <Link to="/"><Logo /></Link>
             <p className="text-white/30 text-sm mt-3 max-w-xs leading-relaxed">
               Sistemas que otimizam operações e devolvem tempo para quem opera de verdade.
             </p>
@@ -33,6 +34,12 @@ export default function Footer() {
                 {label}
               </a>
             ))}
+            <Link
+              to="/quem-somos"
+              className="text-white/40 hover:text-white text-sm transition-colors duration-200"
+            >
+              Quem somos
+            </Link>
           </nav>
 
           {/* Contact */}

@@ -25,7 +25,7 @@ export default function ContactSection() {
     setStatus('sending')
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/techchazan@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ajax/contato@chazantech.com.br', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
@@ -203,8 +203,8 @@ export default function ContactSection() {
                   {status === 'error' && (
                     <p className="text-red-400/80 text-sm">
                       Ocorreu um erro ao enviar. Tente novamente ou envie para{' '}
-                      <a href="mailto:techchazan@gmail.com" className="underline hover:text-red-300 transition-colors">
-                        techchazan@gmail.com
+                      <a href="mailto:contato@chazantech.com.br" className="underline hover:text-red-300 transition-colors">
+                        contato@chazantech.com.br
                       </a>.
                     </p>
                   )}

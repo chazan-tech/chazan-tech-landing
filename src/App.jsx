@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar         from './components/Navbar'
 import Hero           from './components/Hero'
 import Process        from './components/Process'
@@ -9,12 +10,13 @@ import CTASection     from './components/CTASection'
 import FAQ            from './components/FAQ'
 import ContactSection from './components/ContactSection'
 import Footer         from './components/Footer'
+import QuemSomos      from './pages/QuemSomos'
 
 const WhatsAppWidget  = lazy(() => import('./components/WhatsAppWidget'))
 const CookieBanner    = lazy(() => import('./components/CookieBanner'))
 const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'))
 
-export default function App() {
+function Home() {
   return (
     <div className="min-h-screen font-sans antialiased">
       <Navbar />
@@ -35,5 +37,16 @@ export default function App() {
         <ExitIntentPopup />
       </Suspense>
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/"            element={<Home />} />
+        <Route path="/quem-somos"  element={<QuemSomos />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 
 const STORAGE_KEY = 'chazan_exit_shown'
+const IDLE_MS     = 40000  // 40s of real inactivity on mobile
+const LEAVE_DELAY = 350    // debounce before showing on mouse-leave
 
 export default function ExitIntentPopup() {
   const [visible, setVisible] = useState(false)
@@ -8,35 +10,64 @@ export default function ExitIntentPopup() {
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY)) return
 
-    function handleMouseLeave(e) {
-      if (e.clientY <= 0) show()
+    let leaveTimer  = null
+    let idleTimer   = null
+
+    function show() {
+      if (sessionStorage.getItem(STORAGE_KEY)) return
+      sessionStorage.setItem(STORAGE_KEY, '1')
+      clearTimeout(leaveTimer)
+      clearTimeout(idleTimer)
+      setVisible(true)
     }
 
-    // Mobile fallback: show after 40s of inactivity
-    const idleTimer = setTimeout(show, 40000)
+    // ── Desktop: mouse leaves toward the browser bar ──────────
+    function handleMouseLeave(e) {
+      if (e.clientY <= 0) leaveTimer = setTimeout(show, LEAVE_DELAY)
+    }
+    function handleMouseEnter() {
+      clearTimeout(leaveTimer)
+    }
 
-    document.addEventListener('mouseleave', handleMouseLeave)
-    return () => {
-      document.removeEventListener('mouseleave', handleMouseLeave)
+    // ── Mobile: true inactivity (no scroll/touch for IDLE_MS) ─
+    function resetIdle() {
       clearTimeout(idleTimer)
+      idleTimer = setTimeout(show, IDLE_MS)
+    }
+
+    const isTouchDevice = window.matchMedia('(hover: none)').matches
+
+    if (isTouchDevice) {
+      document.addEventListener('scroll',     resetIdle, { passive: true })
+      document.addEventListener('touchstart', resetIdle, { passive: true })
+      resetIdle()
+    } else {
+      document.addEventListener('mouseleave', handleMouseLeave)
+      document.addEventListener('mouseenter', handleMouseEnter)
+    }
+
+    // ── Escape key ────────────────────────────────────────────
+    function handleKeyDown(e) {
+      if (e.key === 'Escape') setVisible(false)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      clearTimeout(leaveTimer)
+      clearTimeout(idleTimer)
+      document.removeEventListener('mouseleave', handleMouseLeave)
+      document.removeEventListener('mouseenter', handleMouseEnter)
+      document.removeEventListener('scroll',     resetIdle)
+      document.removeEventListener('touchstart', resetIdle)
+      document.removeEventListener('keydown',    handleKeyDown)
     }
   }, [])
 
-  function show() {
-    if (sessionStorage.getItem(STORAGE_KEY)) return
-    sessionStorage.setItem(STORAGE_KEY, '1')
-    setVisible(true)
-  }
-
-  function close() {
-    setVisible(false)
-  }
+  function close() { setVisible(false) }
 
   function goToContact() {
     close()
-    setTimeout(() => {
-      document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })
-    }, 200)
+    window.location.href = '/#contato'
   }
 
   if (!visible) return null
@@ -92,15 +123,15 @@ export default function ExitIntentPopup() {
           {/* Description */}
           <p className="text-white/50 text-sm leading-relaxed mb-7">
             Em 30 minutos de conversa, identificamos onde está o maior potencial de ganho
-            na sua operação — sem compromisso e sem custo.
+            na sua operação. Sem compromisso e sem custo.
           </p>
 
           {/* Stats */}
           <div className="flex gap-6 mb-8 pb-6 border-b border-white/8">
             {[
-              { value: 'IA',       label: 'em cada projeto'  },
-              { value: 'Grátis',   label: 'análise inicial'   },
-              { value: 'Zero',     label: 'obrigação'          },
+              { value: 'IA',     label: 'em cada projeto' },
+              { value: 'Grátis', label: 'análise inicial'  },
+              { value: 'Zero',   label: 'obrigação'         },
             ].map(({ value, label }) => (
               <div key={label}>
                 <p className="text-electric font-bold text-lg leading-none">{value}</p>

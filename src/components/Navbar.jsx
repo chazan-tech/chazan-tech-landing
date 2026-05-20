@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Logo from './Logo'
 
 const NAV_LINKS = [
-  { href: '#como-funciona', label: 'Como funciona' },
-  { href: '#servicos',      label: 'Serviços'       },
-  { href: '#diferenciais',  label: 'Por que nós'    },
-  { href: '#faq',           label: 'FAQ'            },
-  { href: '#contato',       label: 'Contato'        },
+  { href: '/#como-funciona', label: 'Como funciona' },
+  { href: '/#servicos',      label: 'Serviços'       },
+  { href: '/#diferenciais',  label: 'Por que nós'    },
+  { href: '/#faq',           label: 'FAQ'            },
 ]
 
 export default function Navbar() {
@@ -28,9 +28,9 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" aria-label="Chazan Tech — início">
+        <Link to="/" aria-label="Chazan Tech — início">
           <Logo />
-        </a>
+        </Link>
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center gap-8" aria-label="Navegação principal">
@@ -43,10 +43,16 @@ export default function Navbar() {
               {label}
             </a>
           ))}
+          <Link
+            to="/quem-somos"
+            className="text-white/60 hover:text-white text-sm font-medium transition-colors duration-200"
+          >
+            Quem somos
+          </Link>
         </nav>
 
         <a
-          href="#contato"
+          href="/#contato"
           className="hidden md:inline-flex items-center gap-2 bg-electric text-deep font-semibold text-sm px-5 py-2.5 rounded-lg
                      hover:bg-electric-light hover:shadow-electric transition-all duration-200 group"
         >
@@ -81,7 +87,7 @@ export default function Navbar() {
       {/* Mobile drawer */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? 'max-h-80 border-t border-electric/10' : 'max-h-0'
+          menuOpen ? 'max-h-96 border-t border-electric/10' : 'max-h-0'
         } bg-deep/98 backdrop-blur-md`}
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
@@ -95,8 +101,15 @@ export default function Navbar() {
               {label}
             </a>
           ))}
+          <Link
+            to="/quem-somos"
+            onClick={() => setMenuOpen(false)}
+            className="block py-3 text-white/60 hover:text-white text-sm font-medium border-b border-white/5 transition-colors"
+          >
+            Quem somos
+          </Link>
           <a
-            href="#contato"
+            href="/#contato"
             onClick={() => setMenuOpen(false)}
             className="mt-3 block text-center bg-electric text-deep font-semibold text-sm px-5 py-3 rounded-lg hover:bg-electric-light transition-colors"
           >
