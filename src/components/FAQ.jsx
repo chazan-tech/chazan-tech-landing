@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useScrollAnimation, staggerDelay } from '../hooks/useScrollAnimation'
 
 const FAQS = [
   {
@@ -29,7 +28,6 @@ const FAQS = [
 ]
 
 export default function FAQ() {
-  const { ref, isVisible } = useScrollAnimation(0.1)
   const [open, setOpen] = useState(null)
 
   function toggle(i) {
@@ -41,12 +39,7 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto px-6">
 
         {/* Header */}
-        <div
-          ref={ref}
-          className={`text-center mb-14 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        >
+        <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2.5 border border-electric/25 rounded-full px-4 py-1.5 mb-7">
             <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse-slow" aria-hidden="true" />
             <span className="text-electric/75 text-xs font-medium tracking-[0.15em] uppercase">
@@ -85,15 +78,9 @@ export default function FAQ() {
 }
 
 function AccordionItem({ faq, index, isOpen, onToggle }) {
-  const { ref, isVisible } = useScrollAnimation(0.1)
-
   return (
     <div
-      ref={ref}
-      style={staggerDelay(index, 60)}
       className={`rounded-xl border transition-all duration-500 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-      } ${
         isOpen
           ? 'border-electric/30 bg-electric/5'
           : 'border-white/8 bg-white/3 hover:border-white/15'

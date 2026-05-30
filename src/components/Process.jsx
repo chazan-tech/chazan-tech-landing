@@ -1,5 +1,3 @@
-import { useScrollAnimation, staggerDelay } from '../hooks/useScrollAnimation'
-
 const STEPS = [
   {
     number: '01',
@@ -41,19 +39,12 @@ const STEPS = [
 ]
 
 export default function Process() {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
     <section id="como-funciona" className="py-24 md:py-32 bg-white line-grid">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div
-          ref={ref}
-          className={`max-w-2xl mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        >
+        <div className="max-w-2xl mb-16">
           <span className="text-electric font-semibold text-sm tracking-widest uppercase">
             Como funciona
           </span>
@@ -87,16 +78,8 @@ export default function Process() {
 }
 
 function StepCard({ step, index }) {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
-    <div
-      ref={ref}
-      style={staggerDelay(index, 120)}
-      className={`relative group transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-    >
+    <div className="relative group">
       {/* Number bubble */}
       <div className="flex items-center gap-4 mb-6">
         <div

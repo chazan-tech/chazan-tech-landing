@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const INITIAL = { name: '', email: '', subject: '', message: '' }
 
 export default function ContactSection() {
-  const { ref, isVisible } = useScrollAnimation(0.15)
   const [fields, setFields]   = useState(INITIAL)
   const [status, setStatus]   = useState('idle') // idle | sending | success | error
   const [errors, setErrors]   = useState({})
@@ -66,12 +64,7 @@ export default function ContactSection() {
       />
 
       <div className="relative max-w-5xl mx-auto px-6">
-        <div
-          ref={ref}
-          className={`transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div>
           {/* Header */}
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2.5 border border-electric/25 rounded-full px-4 py-1.5 mb-7">

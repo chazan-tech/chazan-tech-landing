@@ -1,5 +1,3 @@
-import { useScrollAnimation, staggerDelay } from '../hooks/useScrollAnimation'
-
 const COMPARISONS = [
   {
     process: 'Análise financeira de condomínios',
@@ -22,19 +20,12 @@ const COMPARISONS = [
 ]
 
 export default function SavingsSection() {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
     <section className="py-24 md:py-32 bg-deep">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div
-          ref={ref}
-          className={`max-w-2xl mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        >
+        <div className="max-w-2xl mb-16">
           <span className="text-electric font-semibold text-sm tracking-widest uppercase">
             Retorno mensurável
           </span>
@@ -62,17 +53,10 @@ export default function SavingsSection() {
 }
 
 function ComparisonCard({ item, index }) {
-  const { ref, isVisible } = useScrollAnimation()
   const reduction = Math.round((1 - item.after.people / Math.max(item.before.people, 1)) * 100)
 
   return (
-    <div
-      ref={ref}
-      style={staggerDelay(index, 120)}
-      className={`rounded-xl border border-white/8 overflow-hidden
-                  transition-all duration-500
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-    >
+    <div className="rounded-xl border border-white/8 overflow-hidden">
       {/* Process label */}
       <div className="px-6 pt-5 pb-4 border-b border-white/6">
         <h3 className="text-white font-semibold text-base">{item.process}</h3>
@@ -123,16 +107,8 @@ function ComparisonCard({ item, index }) {
 }
 
 function BottomCallout() {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
-    <div
-      ref={ref}
-      className={`mt-10 p-7 rounded-xl border border-electric/20 bg-electric/5
-                  transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-                  }`}
-    >
+    <div className="mt-10 p-7 rounded-xl border border-electric/20 bg-electric/5">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="max-w-xl">
           <p className="text-white font-semibold text-lg leading-snug">

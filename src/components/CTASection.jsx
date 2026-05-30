@@ -1,8 +1,4 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
-
 export default function CTASection() {
-  const { ref, isVisible } = useScrollAnimation(0.2)
-
   return (
     <section id="cta" className="relative py-24 md:py-32 bg-deep overflow-hidden">
 
@@ -15,12 +11,7 @@ export default function CTASection() {
       />
 
       <div className="relative max-w-4xl mx-auto px-6 text-center">
-        <div
-          ref={ref}
-          className={`transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div>
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2.5 border border-electric/25 rounded-full px-4 py-1.5 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse-slow" aria-hidden="true" />

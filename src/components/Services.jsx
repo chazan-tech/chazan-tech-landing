@@ -1,5 +1,3 @@
-import { useScrollAnimation, staggerDelay } from '../hooks/useScrollAnimation'
-
 const SERVICES = [
   {
     title: 'Automação de Processos',
@@ -79,19 +77,12 @@ const SERVICES = [
 ]
 
 export default function Services() {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
     <section id="servicos" className="py-24 md:py-32 bg-deep">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div
-          ref={ref}
-          className={`max-w-2xl mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        >
+        <div className="max-w-2xl mb-16">
           <span className="text-electric font-semibold text-sm tracking-widest uppercase">
             O que entregamos
           </span>
@@ -115,17 +106,12 @@ export default function Services() {
 }
 
 function ServiceCard({ service, index, featured }) {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
     <div
-      ref={ref}
-      style={staggerDelay(index, 100)}
       className={`relative group p-7 rounded-xl border border-white/8 bg-white/4
                   hover:border-electric/35 hover:bg-white/6
                   transition-all duration-300
-                  ${featured ? 'sm:col-span-2' : ''}
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  ${featured ? 'sm:col-span-2' : ''}`}
     >
       {/* Optional tag */}
       {service.tag && (

@@ -1,5 +1,3 @@
-import { useScrollAnimation, staggerDelay } from '../hooks/useScrollAnimation'
-
 const DIFFERENTIALS = [
   {
     title: 'IA integrada nos sistemas',
@@ -44,19 +42,12 @@ const DIFFERENTIALS = [
 ]
 
 export default function WhyChazan() {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
     <section id="diferenciais" className="py-24 md:py-32 bg-white line-grid">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div
-          ref={ref}
-          className={`max-w-2xl mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        >
+        <div className="max-w-2xl mb-16">
           <span className="text-electric font-semibold text-sm tracking-widest uppercase">
             Por que a Chazan Tech
           </span>
@@ -83,17 +74,8 @@ export default function WhyChazan() {
 }
 
 function DiffCard({ item, index }) {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
-    <div
-      ref={ref}
-      style={staggerDelay(index, 110)}
-      className={`group p-7 rounded-xl border border-deep/8 bg-deep/2
-                  hover:border-electric/40 hover:bg-electric/3
-                  transition-all duration-300
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-    >
+    <div className="group p-7 rounded-xl border border-deep/8 bg-deep/2 hover:border-electric/40 hover:bg-electric/3 transition-all duration-300">
       {/* Icon */}
       <div className="w-10 h-10 text-deep/30 mb-5 group-hover:text-electric transition-colors duration-300">
         {item.icon}
@@ -113,16 +95,8 @@ function DiffCard({ item, index }) {
 }
 
 function BottomNote() {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
-    <div
-      ref={ref}
-      className={`mt-12 p-6 rounded-xl border border-electric/20 bg-electric/4
-                  transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-                  }`}
-    >
+    <div className="mt-12 p-6 rounded-xl border border-electric/20 bg-electric/4">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-start gap-3">
           <div className="w-5 h-5 text-electric mt-0.5 flex-shrink-0">
