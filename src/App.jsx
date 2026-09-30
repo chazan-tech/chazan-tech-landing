@@ -9,10 +9,10 @@ import Projects       from './components/Projects'
 import WhyChazan      from './components/WhyChazan'
 import FAQ            from './components/FAQ'
 import Footer         from './components/Footer'
-import QuemSomos      from './pages/QuemSomos'
-import Software       from './pages/Software'
-import Contato        from './pages/Contato'
 
+const QuemSomos       = lazy(() => import('./pages/QuemSomos'))
+const Software        = lazy(() => import('./pages/Software'))
+const Contato         = lazy(() => import('./pages/Contato'))
 const WhatsAppWidget  = lazy(() => import('./components/WhatsAppWidget'))
 const CookieBanner    = lazy(() => import('./components/CookieBanner'))
 const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'))
@@ -56,6 +56,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <RouteTracker />
+      <Suspense fallback={null}>
       <Routes>
         <Route path="/"            element={<Home />} />
         <Route path="/quem-somos"  element={<QuemSomos />} />
@@ -63,6 +64,7 @@ export default function App() {
         <Route path="/software/:slug" element={<Software />} />
         <Route path="/projetos/:slug"  element={<Software />} />
       </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }
