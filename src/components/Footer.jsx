@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { href: '/#servicos',      label: 'Serviços'       },
   { href: '/#diferenciais',  label: 'Por que nós'    },
   { href: '/#faq',           label: 'FAQ'            },
-  { href: '/#contato',       label: 'Contato'        },
+  { href: '/contato',       label: 'Contato'        },
 ]
 
 export default function Footer() {

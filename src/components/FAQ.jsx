@@ -71,7 +71,7 @@ export default function FAQ() {
         {/* Bottom nudge */}
         <p className="text-center text-white/35 text-sm mt-10">
           Não achou o que precisava?{' '}
-          <a href="#contato" className="text-electric hover:text-electric-light transition-colors underline underline-offset-2">
+          <a href="/contato" className="text-electric hover:text-electric-light transition-colors underline underline-offset-2">
             Fale com a gente
           </a>
           .

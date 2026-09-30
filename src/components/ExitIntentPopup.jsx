@@ -67,7 +67,7 @@ export default function ExitIntentPopup() {
 
   function goToContact() {
     close()
-    window.location.href = '/#contato'
+    window.location.href = '/contato'
   }
 
   if (!visible) return null

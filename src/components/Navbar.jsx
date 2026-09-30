@@ -53,7 +53,7 @@ export default function Navbar() {
         </nav>
 
         <a
-          href="/#contato"
+          href="/contato"
           className="hidden md:inline-flex items-center gap-2 bg-electric text-deep font-semibold text-sm px-5 py-2.5 rounded-lg
                      hover:bg-electric-light hover:shadow-electric transition-all duration-200 group"
         >
@@ -110,7 +110,7 @@ export default function Navbar() {
             Quem somos
           </Link>
           <a
-            href="/#contato"
+            href="/contato"
             onClick={() => setMenuOpen(false)}
             className="mt-3 block text-center bg-electric text-deep font-semibold text-sm px-5 py-3 rounded-lg hover:bg-electric-light transition-colors"
           >

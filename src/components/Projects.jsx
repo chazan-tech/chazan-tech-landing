@@ -55,7 +55,7 @@ export default function Projects() {
         {/* Header */}
         <div className="max-w-2xl mb-10">
           <span className="text-electric font-semibold text-sm tracking-widest uppercase">
-            Projetos no ar
+            Alguns dos nossos projetos
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-deep mt-3 leading-tight">
             Sistemas que já estão<br className="hidden md:block" /> trabalhando por eles
@@ -71,6 +71,7 @@ export default function Projects() {
           {ORDER.map((slug) => (
             <ProjectCard key={slug} slug={slug} project={SOFTWARE[slug]} />
           ))}
+          <MoreCard />
         </div>
 
         <Results />
@@ -115,6 +116,29 @@ function ProjectCard({ slug, project }) {
   )
 }
 
+function MoreCard() {
+  return (
+    <a
+      href="/contato"
+      className="group flex flex-col justify-between p-6 rounded-xl border border-dashed border-electric/40 bg-electric/4 hover:bg-electric/8 transition-all duration-300"
+    >
+      <div>
+        <span className="text-electric text-[10px] font-semibold tracking-widest uppercase">E outros</span>
+        <h3 className="text-deep font-semibold text-lg mt-4">Tem um processo travando a sua equipe?</h3>
+        <p className="text-deep/60 text-sm leading-relaxed mt-3">
+          Cada projeto começa pelo problema de quem contrata. Conte o seu e desenhamos a solução, pronta ou sob medida.
+        </p>
+      </div>
+      <span className="pt-5 inline-flex items-center gap-1.5 text-electric text-sm font-semibold group-hover:text-electric-light transition-colors">
+        Conversar sobre o meu caso
+        <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </span>
+    </a>
+  )
+}
+
 function Results() {
   return (
     <div className="mt-12 p-6 md:p-8 rounded-xl bg-deep">
@@ -136,7 +160,7 @@ function Results() {
           Quer ver um deles funcionando? Mostramos ao vivo, com dados fictícios, ou desenhamos um novo para o seu processo.
         </p>
         <a
-          href="#contato"
+          href="/contato"
           className="flex-shrink-0 inline-flex items-center gap-2 bg-electric text-deep font-semibold px-6 py-3.5 rounded-lg
                      hover:bg-electric-light hover:shadow-electric-lg transition-all duration-200 group text-sm"
         >

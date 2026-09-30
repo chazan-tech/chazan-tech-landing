@@ -21,7 +21,7 @@ React 18 + Vite 6 + Tailwind CSS 3. React Router: `/` (home, anchor navigation),
 Single `App.jsx` that composes all sections in order:
 
 ```
-Navbar → Hero → Projects → Services → Process → FAQ → WhyChazan → ContactSection → Footer
+Navbar → Hero → Projects → Services → Process → FAQ → WhyChazan → Footer (contact lives on `/contato`)
 ```
 
 All components are in `src/components/`. Scroll-reveal animations come from `src/hooks/useScrollAnimation.js`, which exports:
@@ -47,13 +47,13 @@ Custom utilities in `src/index.css`: `.dot-grid` (hero/dark section bg pattern),
 
 ## Section IDs and navigation
 
-All CTA buttons and nav links point to `#contato` (the contact form). Section anchors:
+All CTA buttons and nav links point to `/contato` (the contact form). Section anchors:
 
 | `#como-funciona` | Process |
 | `#servicos` | Services |
 | `#projetos` | Projects |
 | `#diferenciais` | WhyChazan |
-| `#contato` | ContactSection (the actual contact form) |
+| `/contato` | Contact page (ContactSection, the actual contact form) |
 
 ## Component patterns
 

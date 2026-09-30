@@ -8,7 +8,6 @@ import Services       from './components/Services'
 import Projects       from './components/Projects'
 import WhyChazan      from './components/WhyChazan'
 import FAQ            from './components/FAQ'
-import ContactSection from './components/ContactSection'
 import Footer         from './components/Footer'
 import QuemSomos      from './pages/QuemSomos'
 import Software       from './pages/Software'
@@ -29,7 +28,6 @@ function Home() {
         <Process />
         <FAQ />
         <WhyChazan />
-        <ContactSection />
       </main>
       <Footer />
       <Suspense fallback={null}>

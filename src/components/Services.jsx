@@ -44,7 +44,7 @@ const SERVICES = [
     title: 'Software Customizado',
     description:
       'Quando nenhum software pronto cabe, construímos o sistema exato para a sua operação.',
-    href: '#contato',
+    href: '/contato',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6" />
@@ -64,7 +64,7 @@ const SERVICES = [
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
       </svg>
     ),
-    href: '#contato',
+    href: '/contato',
     tag: null,
   },
   {
@@ -79,7 +79,7 @@ const SERVICES = [
         <line x1="2"  y1="20" x2="22" y2="20" />
       </svg>
     ),
-    href: '#contato',
+    href: '/contato',
     tag: null,
   },
 ]
@@ -120,7 +120,7 @@ function ServiceCard({ service, index, featured }) {
   const isPage = service.href.startsWith('/')
   const cta = (
     <>
-      <span>{isPage ? 'Conhecer o software' : 'Saiba mais'}</span>
+      <span>{service.href.startsWith('/software') ? 'Conhecer o software' : 'Saiba mais'}</span>
       <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>

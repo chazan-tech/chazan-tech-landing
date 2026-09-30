@@ -1,7 +1,6 @@
 import { whatsappUrl, trackContact } from "../lib/contact";
 
 const STATS = [
-  { value: "4", label: "softwares próprios prontos para contratar" },
   { value: "Gradual", label: "implantação sem parar sua operação" },
 ];
 
@@ -67,7 +66,7 @@ export default function Hero() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 animate-fade-up [animation-delay:220ms]">
             <a
-              href="#contato"
+              href="/contato"
               className="inline-flex items-center justify-center gap-2 bg-electric text-deep font-semibold px-7 py-4 rounded-lg
                          hover:bg-electric-light hover:shadow-electric-lg transition-all duration-200 group"
             >

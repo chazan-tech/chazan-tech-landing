@@ -14,7 +14,7 @@ export default function Contato() {
   return (
     <div className="min-h-screen font-sans antialiased">
       <Navbar />
-      <main className="pt-12">
+      <main className="pt-12 bg-deep-darker">
         <ContactSection />
       </main>
       <Footer />

@@ -303,7 +303,7 @@ function CtaBlock() {
       </p>
 
       <a
-        href="/#contato"
+        href="/contato"
         className="inline-flex items-center gap-3 bg-electric text-deep font-bold text-base px-9 py-4 rounded-lg
                    hover:bg-electric-light hover:shadow-electric-lg transition-all duration-200 group"
       >
