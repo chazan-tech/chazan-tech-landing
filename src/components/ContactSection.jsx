@@ -4,7 +4,9 @@ import { whatsappUrl, trackContact } from '../lib/contact'
 
 const INITIAL = { name: '', email: '', subject: '', message: '' }
 
-export default function ContactSection() {
+export default function ContactSection({ asPage = false }) {
+  const Heading = asPage ? 'h1' : 'h2'
+
   const [fields, setFields]   = useState(INITIAL)
   const [status, setStatus]   = useState('idle') // idle | sending | success | error
   const [errors, setErrors]   = useState({})
@@ -76,10 +78,10 @@ export default function ContactSection() {
                 Fale com a gente
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-5">
+            <Heading className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-5">
               Tem um projeto em mente?<br className="hidden md:block" />{' '}
               <span className="text-electric">Conte para nós.</span>
-            </h2>
+            </Heading>
             <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
               Preencha o formulário ou chame direto no WhatsApp, que é o caminho mais rápido. Sem compromisso.
             </p>

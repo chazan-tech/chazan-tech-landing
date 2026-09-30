@@ -60,7 +60,7 @@ export default function WhyChazan() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 -mx-6 px-6 pb-2 no-scrollbar md:mx-0 md:px-0 md:pb-0 md:overflow-visible md:grid md:grid-cols-3 md:gap-6">
           {DIFFERENTIALS.map((item, i) => (
             <DiffCard key={item.title} item={item} index={i} />
           ))}
@@ -72,7 +72,7 @@ export default function WhyChazan() {
 
 function DiffCard({ item, index }) {
   return (
-    <div className="group p-7 rounded-xl border border-deep/8 bg-deep/2 hover:border-electric/40 hover:bg-electric/3 transition-all duration-300">
+    <div className="w-[82%] flex-shrink-0 snap-start md:w-auto md:flex-shrink group p-7 rounded-xl border border-deep/8 bg-deep/2 hover:border-electric/40 hover:bg-electric/3 transition-all duration-300">
       {/* Icon */}
       <div className="w-10 h-10 text-deep/30 mb-5 group-hover:text-electric transition-colors duration-300">
         {item.icon}

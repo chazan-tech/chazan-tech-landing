@@ -14,14 +14,14 @@ No linter, formatter, or test suite configured.
 
 ## Stack
 
-React 18 + Vite 6 + Tailwind CSS 3. React Router: `/` (home, anchor navigation), `/quem-somos`, `/contato` (reuses ContactSection), `/software/:slug` and `/projetos/:slug` (product pages, data in `src/data/software.js`). No state management library. No backend — contact form submits via [FormSubmit.co](https://formsubmit.co) AJAX to `contato@chazantech.com.br`.
+React 18 + Vite 6 + Tailwind CSS 3. React Router: `/` (home, anchor navigation), `/quem-somos`, `/contato` (reuses ContactSection), `/faq` (reuses FAQ + FAQPage JSON-LD), `/software/:slug` and `/projetos/:slug` (product pages, data in `src/data/software.js`). No state management library. No backend — contact form submits via [FormSubmit.co](https://formsubmit.co) AJAX to `contato@chazantech.com.br`.
 
 ## Architecture
 
 Single `App.jsx` that composes all sections in order:
 
 ```
-Navbar → Hero → Projects → Services → Process → FAQ → WhyChazan → Footer (contact lives on `/contato`)
+Navbar → Hero → Projects → Services → Process → WhyChazan → FAQ (3-question teaser) → Footer (contact lives on `/contato`)
 ```
 
 All components are in `src/components/`. Scroll-reveal animations come from `src/hooks/useScrollAnimation.js`, which exports:

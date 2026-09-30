@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { href: '/#projetos',      label: 'Projetos'       },
   { href: '/#servicos',      label: 'Serviços'       },
   { href: '/#como-funciona', label: 'Como funciona'  },
-  { href: '/#faq',           label: 'FAQ'            },
+  { href: '/faq',           label: 'FAQ'            },
   { href: '/#diferenciais',  label: 'Por que nós'    },
 ]
 
@@ -36,13 +36,13 @@ export default function Navbar() {
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center gap-8" aria-label="Navegação principal">
           {NAV_LINKS.map(({ href, label }) => (
-            <a
+            <Link
               key={href}
-              href={href}
+              to={href}
               className="text-white/60 hover:text-white text-sm font-medium transition-colors duration-200"
             >
               {label}
-            </a>
+            </Link>
           ))}
           <Link
             to="/quem-somos"
@@ -52,8 +52,8 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        <a
-          href="/contato"
+        <Link
+          to="/contato"
           className="hidden md:inline-flex items-center gap-2 bg-electric text-deep font-semibold text-sm px-5 py-2.5 rounded-lg
                      hover:bg-electric-light hover:shadow-electric transition-all duration-200 group"
         >
@@ -64,7 +64,7 @@ export default function Navbar() {
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </a>
+        </Link>
 
         {/* Mobile hamburger */}
         <button
@@ -93,14 +93,14 @@ export default function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
           {NAV_LINKS.map(({ href, label }) => (
-            <a
+            <Link
               key={href}
-              href={href}
+              to={href}
               onClick={() => setMenuOpen(false)}
               className="block py-3 text-white/60 hover:text-white text-sm font-medium border-b border-white/5 transition-colors"
             >
               {label}
-            </a>
+            </Link>
           ))}
           <Link
             to="/quem-somos"
@@ -109,13 +109,13 @@ export default function Navbar() {
           >
             Quem somos
           </Link>
-          <a
-            href="/contato"
+          <Link
+            to="/contato"
             onClick={() => setMenuOpen(false)}
             className="mt-3 block text-center bg-electric text-deep font-semibold text-sm px-5 py-3 rounded-lg hover:bg-electric-light transition-colors"
           >
             Agende uma análise
-          </a>
+          </Link>
         </div>
       </div>
     </header>

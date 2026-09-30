@@ -103,7 +103,7 @@ export default function Services() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 -mx-6 px-6 pb-2 no-scrollbar sm:mx-0 sm:px-0 sm:pb-0 sm:overflow-visible sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-4">
           {SERVICES.map((service, i) => (
             <ServiceCard key={service.title} service={service} index={i} featured={service.featured} />
           ))}
@@ -129,7 +129,7 @@ function ServiceCard({ service, index, featured }) {
 
   return (
     <div
-      className={`relative group p-5 rounded-xl border border-white/8 bg-white/4
+      className={`w-[82%] flex-shrink-0 snap-start sm:w-auto sm:flex-shrink relative group p-5 rounded-xl border border-white/8 bg-white/4
                   hover:border-electric/35 hover:bg-white/6
                   transition-all duration-300
                   ${featured ? 'sm:col-span-2' : ''}`}

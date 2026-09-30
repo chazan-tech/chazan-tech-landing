@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-const FAQS = [
+export const FAQS = [
   {
     q: 'Vocês vendem software pronto ou só desenvolvem sob medida?',
     a: 'Os dois. Temos softwares prontos para contratar, como o CondFin, o Pedro (atendimento no WhatsApp), a Gestão Financeira e o Banco de Talentos, configurados para a sua operação. Quando nada pronto cabe, desenvolvemos sob medida.',
@@ -31,7 +32,12 @@ const FAQS = [
   },
 ]
 
-export default function FAQ() {
+// Perguntas mostradas na home (índices de FAQS); a lista completa fica em /faq.
+const TEASER = [0, 1, 3]
+
+export default function FAQ({ asPage = false, teaser = false }) {
+  const Heading = asPage ? 'h1' : 'h2'
+  const items = teaser ? TEASER.map((i) => FAQS[i]) : FAQS
   const [open, setOpen] = useState(null)
 
   function toggle(i) {
@@ -39,7 +45,7 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-deep">
+    <section id="faq" className={`bg-deep ${asPage ? 'pt-20 pb-16 md:pt-28 md:pb-24' : 'py-16 md:py-24'}`}>
       <div className="max-w-3xl mx-auto px-6">
 
         {/* Header */}
@@ -50,14 +56,14 @@ export default function FAQ() {
               Dúvidas frequentes
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight">
+          <Heading className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight">
             Perguntas que a maioria<br className="hidden md:block" /> faz antes de contratar
-          </h2>
+          </Heading>
         </div>
 
         {/* Accordion */}
         <div className="flex flex-col gap-2">
-          {FAQS.map((faq, i) => (
+          {items.map((faq, i) => (
             <AccordionItem
               key={faq.q}
               faq={faq}
@@ -69,13 +75,21 @@ export default function FAQ() {
         </div>
 
         {/* Bottom nudge */}
-        <p className="text-center text-white/35 text-sm mt-10">
-          Não achou o que precisava?{' '}
-          <a href="/contato" className="text-electric hover:text-electric-light transition-colors underline underline-offset-2">
-            Fale com a gente
-          </a>
-          .
-        </p>
+        {teaser ? (
+          <p className="text-center mt-8">
+            <Link to="/faq" className="text-electric hover:text-electric-light text-sm font-semibold transition-colors">
+              Ver todas as perguntas →
+            </Link>
+          </p>
+        ) : (
+          <p className="text-center text-white/35 text-sm mt-10">
+            Não achou o que precisava?{' '}
+            <Link to="/contato" className="text-electric hover:text-electric-light transition-colors underline underline-offset-2">
+              Fale com a gente
+            </Link>
+            .
+          </p>
+        )}
       </div>
     </section>
   )

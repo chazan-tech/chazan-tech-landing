@@ -1,9 +1,5 @@
 import { whatsappUrl, trackContact } from "../lib/contact";
 
-const STATS = [
-  { value: "Gradual", label: "implantação sem parar sua operação" },
-];
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-deep flex items-center overflow-hidden md:pt-20">
@@ -106,21 +102,6 @@ export default function Hero() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </a>
-          </div>
-
-          {/* Stats bar */}
-          <div
-            className="mt-16 pt-8 border-t border-white/10 flex flex-wrap gap-x-12 gap-y-6
-                       animate-fade-up [animation-delay:340ms]"
-          >
-            {STATS.map(({ value, label }) => (
-              <div key={label}>
-                <div className="text-electric font-bold text-xl leading-none">
-                  {value}
-                </div>
-                <div className="text-white/35 text-sm mt-1.5">{label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

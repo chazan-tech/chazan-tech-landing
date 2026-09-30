@@ -67,7 +67,7 @@ export default function Projects() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 -mx-6 px-6 pb-2 no-scrollbar sm:mx-0 sm:px-0 sm:pb-0 sm:overflow-visible sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
           {ORDER.map((slug) => (
             <ProjectCard key={slug} slug={slug} project={SOFTWARE[slug]} />
           ))}
@@ -87,7 +87,7 @@ function ProjectCard({ slug, project }) {
   return (
     <Link
       to={to}
-      className="group flex flex-col p-6 rounded-xl border border-deep/8 bg-deep/2 hover:border-electric/40 hover:bg-electric/3 transition-all duration-300"
+      className="w-[82%] flex-shrink-0 snap-start sm:w-auto sm:flex-shrink group flex flex-col p-6 rounded-xl border border-deep/8 bg-deep/2 hover:border-electric/40 hover:bg-electric/3 transition-all duration-300"
     >
       <div className="flex items-start justify-between gap-4 mb-4">
         <div className="w-9 h-9 text-deep/30 group-hover:text-electric transition-colors duration-300">
@@ -103,7 +103,7 @@ function ProjectCard({ slug, project }) {
       </div>
 
       <h3 className="text-deep font-semibold text-lg">{project.name}</h3>
-      <p className="text-deep/40 text-xs mt-1 mb-3">{project.audience}</p>
+      <p className="text-deep/40 text-xs mt-1 mb-3 sm:min-h-[2rem]">{project.audience}</p>
       <p className="text-deep/60 text-sm leading-relaxed">{project.tagline}</p>
 
       <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-electric text-sm font-semibold group-hover:text-electric-light transition-colors">
@@ -120,7 +120,7 @@ function MoreCard() {
   return (
     <a
       href="/contato"
-      className="group flex flex-col justify-between p-6 rounded-xl border border-dashed border-electric/40 bg-electric/4 hover:bg-electric/8 transition-all duration-300"
+      className="w-[82%] flex-shrink-0 snap-start sm:w-auto sm:flex-shrink group flex flex-col justify-between p-6 rounded-xl border border-dashed border-electric/40 bg-electric/4 hover:bg-electric/8 transition-all duration-300"
     >
       <div>
         <span className="text-electric text-[10px] font-semibold tracking-widest uppercase">E outros</span>

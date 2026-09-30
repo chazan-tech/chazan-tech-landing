@@ -1,19 +1,26 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
+import { SOFTWARE } from '../data/software'
 
 const NAV_LINKS = [
-  { href: '/#como-funciona', label: 'Como funciona' },
+  { href: '/#projetos',      label: 'Projetos'       },
   { href: '/#servicos',      label: 'Serviços'       },
+  { href: '/#como-funciona', label: 'Como funciona'  },
+  { href: '/faq',           label: 'FAQ'            },
   { href: '/#diferenciais',  label: 'Por que nós'    },
-  { href: '/#faq',           label: 'FAQ'            },
-  { href: '/contato',       label: 'Contato'        },
+  { href: '/contato',        label: 'Contato'        },
 ]
+
+const PROJECTS = ['pedro', 'condfin', 'gestao-financeira', 'banco-de-talentos', 'sempre-crianca'].map((slug) => ({
+  to: `${SOFTWARE[slug].kind === 'sob-medida' ? '/projetos' : '/software'}/${slug}`,
+  label: SOFTWARE[slug].name,
+}))
 
 export default function Footer() {
   return (
     <footer className="bg-deep-darker border-t border-white/8">
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr_auto] items-start gap-8 md:gap-10">
 
           {/* Brand */}
           <div>
@@ -23,16 +30,31 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Nav */}
-          <nav className="flex flex-wrap gap-x-8 gap-y-3" aria-label="Navegação rodapé">
-            {NAV_LINKS.map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
+          {/* Projects */}
+          <nav className="flex flex-col gap-3" aria-label="Projetos">
+            <span className="text-white/60 text-xs font-semibold tracking-widest uppercase">Projetos</span>
+            {PROJECTS.map(({ to, label }) => (
+              <Link
+                key={to}
+                to={to}
                 className="text-white/40 hover:text-white text-sm transition-colors duration-200"
               >
                 {label}
-              </a>
+              </Link>
+            ))}
+          </nav>
+
+          {/* Nav */}
+          <nav className="flex flex-col gap-3" aria-label="Navegação rodapé">
+            <span className="text-white/60 text-xs font-semibold tracking-widest uppercase">Site</span>
+            {NAV_LINKS.map(({ href, label }) => (
+              <Link
+                key={href}
+                to={href}
+                className="text-white/40 hover:text-white text-sm transition-colors duration-200"
+              >
+                {label}
+              </Link>
             ))}
             <Link
               to="/quem-somos"

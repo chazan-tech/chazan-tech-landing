@@ -18,6 +18,11 @@
   * {
     box-sizing: border-box;
   }
+
+  /* Âncoras não ficam escondidas atrás da navbar fixa */
+  section[id] {
+    scroll-margin-top: 1rem;
+  }
 }
 
 @layer utilities {
@@ -37,6 +42,15 @@
       linear-gradient(rgba(47, 79, 79, 0.06) 1px, transparent 1px),
       linear-gradient(90deg, rgba(47, 79, 79, 0.06) 1px, transparent 1px);
     background-size: 40px 40px;
+  }
+
+  /* Carrossel horizontal no mobile: rolagem com snap, sem barra */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 
   /* Glow variants */
