@@ -64,7 +64,7 @@ export default function ContactSection({ asPage = false }) {
       <div className="absolute inset-0 dot-grid opacity-30" aria-hidden="true" />
       <div
         className="absolute bottom-0 right-1/4 w-[500px] h-[350px] rounded-full
-                   bg-electric/6 blur-[100px] pointer-events-none"
+                   bg-[radial-gradient(closest-side,rgba(0,206,209,0.12),transparent)] pointer-events-none"
         aria-hidden="true"
       />
 

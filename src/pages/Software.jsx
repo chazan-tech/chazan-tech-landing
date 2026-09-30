@@ -59,7 +59,7 @@ export default function Software() {
       {/* Hero */}
       <section className="relative bg-deep overflow-hidden pt-20">
         <div className="absolute inset-0 dot-grid opacity-60" aria-hidden="true" />
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-electric/6 blur-[100px] pointer-events-none" aria-hidden="true" />
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(0,206,209,0.12),transparent)] pointer-events-none" aria-hidden="true" />
 
         <div className="relative max-w-6xl mx-auto px-6 py-24 md:py-28">
           <div className="max-w-3xl">

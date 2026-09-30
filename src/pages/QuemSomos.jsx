@@ -70,7 +70,7 @@ export default function QuemSomos() {
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative min-h-[60vh] bg-deep flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 dot-grid opacity-60" aria-hidden="true" />
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-electric/6 blur-[100px] pointer-events-none" aria-hidden="true" />
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(0,206,209,0.12),transparent)] pointer-events-none" aria-hidden="true" />
 
         <div className="relative max-w-6xl mx-auto px-6 py-24 w-full">
           <PageHeroContent />
@@ -101,7 +101,7 @@ export default function QuemSomos() {
       {/* ── CTA ───────────────────────────────────────────────── */}
       <section className="relative py-24 md:py-32 bg-deep overflow-hidden">
         <div className="absolute inset-0 dot-grid opacity-40" aria-hidden="true" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-electric/8 blur-[120px] pointer-events-none" aria-hidden="true" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(0,206,209,0.16),transparent)] pointer-events-none" aria-hidden="true" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <CtaBlock />
         </div>

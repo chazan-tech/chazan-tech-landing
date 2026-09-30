@@ -9,13 +9,13 @@ export default function Hero() {
       {/* Radial glow — top-right */}
       <div
         className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full
-                   bg-electric/6 blur-[100px] pointer-events-none"
+                   bg-[radial-gradient(closest-side,rgba(0,206,209,0.12),transparent)] pointer-events-none"
         aria-hidden="true"
       />
       {/* Radial glow — bottom-left */}
       <div
         className="absolute -bottom-48 -left-24 w-[480px] h-[480px] rounded-full
-                   bg-electric/4 blur-[120px] pointer-events-none"
+                   bg-[radial-gradient(closest-side,rgba(0,206,209,0.09),transparent)] pointer-events-none"
         aria-hidden="true"
       />
 
