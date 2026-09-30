@@ -72,16 +72,4 @@
   .glow-electric-lg {
     box-shadow: 0 0 40px rgba(0, 206, 209, 0.55);
   }
-
-  /* Scroll animation helpers */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

@@ -1,6 +1,5 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { useScrollAnimation, staggerDelay } from '../hooks/useScrollAnimation'
 
 const VALUES = [
   {
@@ -113,13 +112,8 @@ export default function QuemSomos() {
 }
 
 function PageHeroContent() {
-  const { ref, isVisible } = useScrollAnimation(0)
-
   return (
-    <div
-      ref={ref}
-      className={`max-w-3xl transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-    >
+    <div className="max-w-3xl">
       <span className="text-electric font-semibold text-sm tracking-widest uppercase">
         Quem somos
       </span>
@@ -135,13 +129,8 @@ function PageHeroContent() {
 }
 
 function Story() {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-    >
+    <div>
       <div className="max-w-2xl">
         <span className="text-electric font-semibold text-sm tracking-widest uppercase">
           Nossa história
@@ -167,13 +156,10 @@ function Story() {
 }
 
 function Team() {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
     <div>
       <div
-        ref={ref}
-        className={`max-w-2xl mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+        className="max-w-2xl mb-14"
       >
         <span className="text-electric font-semibold text-sm tracking-widest uppercase">
           O time
@@ -195,7 +181,7 @@ function Team() {
         />
         <div className="flex flex-col gap-5 justify-center">
           {TEAM.map((member, i) => (
-            <TeamCard key={member.name} member={member} index={i} />
+            <TeamCard key={member.name} member={member} />
           ))}
         </div>
       </div>
@@ -203,15 +189,10 @@ function Team() {
   )
 }
 
-function TeamCard({ member, index }) {
-  const { ref, isVisible } = useScrollAnimation()
-
+function TeamCard({ member }) {
   return (
     <div
-      ref={ref}
-      style={staggerDelay(index, 120)}
-      className={`p-7 rounded-xl border border-white/8 bg-white/4 hover:border-electric/30 transition-all duration-300
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className="p-7 rounded-xl border border-white/8 bg-white/4 hover:border-electric/30 transition-all duration-300"
     >
       <div className="flex items-center gap-4 mb-5">
         <div className="w-12 h-12 rounded-full bg-electric/15 border border-electric/25 flex items-center justify-center text-electric font-bold text-sm flex-shrink-0">
@@ -234,13 +215,10 @@ function TeamCard({ member, index }) {
 }
 
 function Values() {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
     <div>
       <div
-        ref={ref}
-        className={`max-w-2xl mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+        className="max-w-2xl mb-14"
       >
         <span className="text-electric font-semibold text-sm tracking-widest uppercase">
           O que nos move
@@ -252,22 +230,17 @@ function Values() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {VALUES.map((value, i) => (
-          <ValueCard key={value.title} value={value} index={i} />
+          <ValueCard key={value.title} value={value} />
         ))}
       </div>
     </div>
   )
 }
 
-function ValueCard({ value, index }) {
-  const { ref, isVisible } = useScrollAnimation()
-
+function ValueCard({ value }) {
   return (
     <div
-      ref={ref}
-      style={staggerDelay(index, 110)}
-      className={`group p-7 rounded-xl border border-deep/8 bg-deep/2 hover:border-electric/40 hover:bg-electric/3 transition-all duration-300
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className="group p-7 rounded-xl border border-deep/8 bg-deep/2 hover:border-electric/40 hover:bg-electric/3 transition-all duration-300"
     >
       <div className="w-10 h-10 text-deep/30 mb-5 group-hover:text-electric transition-colors duration-300">
         {value.icon}
@@ -279,13 +252,8 @@ function ValueCard({ value, index }) {
 }
 
 function CtaBlock() {
-  const { ref, isVisible } = useScrollAnimation(0.2)
-
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-    >
+    <div>
       <div className="inline-flex items-center gap-2.5 border border-electric/25 rounded-full px-4 py-1.5 mb-8">
         <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse-slow" aria-hidden="true" />
         <span className="text-electric/75 text-xs font-medium tracking-[0.15em] uppercase">

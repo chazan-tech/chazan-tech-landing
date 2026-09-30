@@ -24,9 +24,7 @@ Single `App.jsx` that composes all sections in order:
 Navbar → Hero → Projects → Services → Process → WhyChazan → FAQ (3-question teaser) → Footer (contact lives on `/contato`)
 ```
 
-All components are in `src/components/`. Scroll-reveal animations come from `src/hooks/useScrollAnimation.js`, which exports:
-- `useScrollAnimation(threshold)` — returns `{ ref, isVisible }` (one-shot IntersectionObserver, stays visible once triggered)
-- `staggerDelay(index, base)` — returns an inline `transitionDelay` style object for staggered card animations
+All components are in `src/components/`. There are no scroll-reveal or entrance animations on purpose: content is visible on first paint.
 
 ## Tracking
 

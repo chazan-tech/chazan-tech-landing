@@ -24,8 +24,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2.5 border border-electric/25 rounded-full px-4 py-1.5 mb-8
-                          animate-fade-in"
+            className="inline-flex items-center gap-2.5 border border-electric/25 rounded-full px-4 py-1.5 mb-8"
           >
             <span
               className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse-slow"
@@ -38,8 +37,7 @@ export default function Hero() {
 
           {/* Headline */}
           <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6
-                         animate-fade-up"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6"
           >
             Cada processo manual
             <br className="hidden sm:block" /> em sua operação{" "}
@@ -51,8 +49,7 @@ export default function Hero() {
 
           {/* Sub-headline */}
           <p
-            className="text-white/55 text-lg md:text-xl leading-relaxed max-w-2xl mb-10
-                       animate-fade-up [animation-delay:120ms]"
+            className="text-white/55 text-lg md:text-xl leading-relaxed max-w-2xl mb-10"
           >
             Softwares e sistemas sob medida com IA que assumem o que sua equipe
             faz na mão: atendimento no WhatsApp, boletos, cadastros, relatórios.
@@ -60,7 +57,7 @@ export default function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 animate-fade-up [animation-delay:220ms]">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <a
               href="/contato"
               className="inline-flex items-center justify-center gap-2 bg-electric text-deep font-semibold px-7 py-4 rounded-lg
