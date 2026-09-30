@@ -40,11 +40,11 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section id="como-funciona" className="py-24 md:py-32 bg-white line-grid">
+    <section id="como-funciona" className="py-16 md:py-24 bg-white line-grid">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-10">
           <span className="text-electric font-semibold text-sm tracking-widest uppercase">
             Como funciona
           </span>

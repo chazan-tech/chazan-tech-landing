@@ -4,7 +4,7 @@ const SERVICES = [
   {
     title: 'Bots de Atendimento no WhatsApp',
     description:
-      'Seu WhatsApp respondendo clientes, conduzindo trocas e cadastros e retomando quem sumiu no meio da conversa. O bot sabe o seu catálogo e o seu horário, avisa a equipe no Telegram e sai da frente quando você assume.',
+      'Responde clientes, conduz trocas e cadastros e retoma quem sumiu. Avisa a equipe no Telegram e sai da frente quando você assume.',
     href: '/software/pedro',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -17,7 +17,7 @@ const SERVICES = [
   {
     title: 'Automação de Processos',
     description:
-      'Cadastros, boletos, relatórios, aprovações e assinaturas: identificamos o que seu time repete toda semana e colocamos para rodar sozinho, com a equipe entrando só nas exceções.',
+      'Cadastros, boletos, relatórios e assinaturas rodando sozinhos. A equipe entra só nas exceções.',
     href: '#projetos',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -30,7 +30,7 @@ const SERVICES = [
   {
     title: 'Inteligência Artificial Aplicada',
     description:
-      'IA que lê boletos, PDFs de prestação de contas e fotos, categoriza, aponta gasto fora da curva e gera relatórios prontos. Integrada ao sistema, não como ferramenta solta.',
+      'IA que lê boletos e PDFs, aponta gasto fora da curva e gera relatórios, integrada ao seu sistema.',
     href: '/software/condfin',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -43,7 +43,7 @@ const SERVICES = [
   {
     title: 'Software Customizado',
     description:
-      'Quando nenhum software pronto cabe na sua operação, construímos o sistema exato, como a plataforma de autoatendimento que criamos para o Sempre Criança.',
+      'Quando nenhum software pronto cabe, construímos o sistema exato para a sua operação.',
     href: '#contato',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -57,7 +57,7 @@ const SERVICES = [
   {
     title: 'Integração de Sistemas',
     description:
-      'Conectamos seu ERP, CRM, planilhas, plataformas de e-commerce e ferramentas internas via API — para que os dados fluam sem intervenção humana.',
+      'Conectamos ERP, CRM, planilhas e e-commerce via API para os dados fluírem sozinhos.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
@@ -70,7 +70,7 @@ const SERVICES = [
   {
     title: 'Inteligência de Dados',
     description:
-      'Dashboards em tempo real que transformam dados dispersos em decisões claras. Você para de tomar decisões com base em planilhas desatualizadas.',
+      'Dashboards em tempo real no lugar de planilhas desatualizadas.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <line x1="18" y1="20" x2="18" y2="10" />
@@ -86,11 +86,11 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-24 md:py-32 bg-deep">
+    <section id="servicos" className="py-16 md:py-24 bg-deep">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-10">
           <span className="text-electric font-semibold text-sm tracking-widest uppercase">
             O que entregamos
           </span>
@@ -103,7 +103,7 @@ export default function Services() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {SERVICES.map((service, i) => (
             <ServiceCard key={service.title} service={service} index={i} featured={service.featured} />
           ))}
@@ -129,7 +129,7 @@ function ServiceCard({ service, index, featured }) {
 
   return (
     <div
-      className={`relative group p-7 rounded-xl border border-white/8 bg-white/4
+      className={`relative group p-5 rounded-xl border border-white/8 bg-white/4
                   hover:border-electric/35 hover:bg-white/6
                   transition-all duration-300
                   ${featured ? 'sm:col-span-2' : ''}`}
@@ -143,12 +143,12 @@ function ServiceCard({ service, index, featured }) {
       )}
 
       {/* Icon */}
-      <div className="w-11 h-11 text-electric/50 mb-5 group-hover:text-electric transition-colors duration-300">
+      <div className="w-8 h-8 text-electric/50 mb-3 group-hover:text-electric transition-colors duration-300">
         {service.icon}
       </div>
 
       {/* Text */}
-      <h3 className="text-white font-semibold text-lg mb-3">{service.title}</h3>
+      <h3 className="text-white font-semibold text-base mb-2">{service.title}</h3>
       <p className="text-white/45 leading-relaxed text-sm">{service.description}</p>
 
       {/* Hover indicator */}

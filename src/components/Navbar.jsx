@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import Logo from './Logo'
 
 const NAV_LINKS = [
-  { href: '/#como-funciona', label: 'Como funciona' },
-  { href: '/#servicos',      label: 'Serviços'       },
   { href: '/#projetos',      label: 'Projetos'       },
-  { href: '/#diferenciais',  label: 'Por que nós'    },
+  { href: '/#servicos',      label: 'Serviços'       },
+  { href: '/#como-funciona', label: 'Como funciona'  },
   { href: '/#faq',           label: 'FAQ'            },
+  { href: '/#diferenciais',  label: 'Por que nós'    },
 ]
 
 export default function Navbar() {

@@ -14,14 +14,14 @@ No linter, formatter, or test suite configured.
 
 ## Stack
 
-React 18 + Vite 6 + Tailwind CSS 3. React Router: `/` (home, anchor navigation), `/quem-somos` and `/software/:slug` (product pages, data in `src/data/software.js`). No state management library. No backend — contact form submits via [FormSubmit.co](https://formsubmit.co) AJAX to `contato@chazantech.com.br`.
+React 18 + Vite 6 + Tailwind CSS 3. React Router: `/` (home, anchor navigation), `/quem-somos`, `/contato` (reuses ContactSection), `/software/:slug` and `/projetos/:slug` (product pages, data in `src/data/software.js`). No state management library. No backend — contact form submits via [FormSubmit.co](https://formsubmit.co) AJAX to `contato@chazantech.com.br`.
 
 ## Architecture
 
 Single `App.jsx` that composes all sections in order:
 
 ```
-Navbar → Hero → Process → Services → Projects → SavingsSection → WhyChazan → CTASection → FAQ → ContactSection → Footer
+Navbar → Hero → Projects → Services → Process → FAQ → WhyChazan → ContactSection → Footer
 ```
 
 All components are in `src/components/`. Scroll-reveal animations come from `src/hooks/useScrollAnimation.js`, which exports:
@@ -53,7 +53,6 @@ All CTA buttons and nav links point to `#contato` (the contact form). Section an
 | `#servicos` | Services |
 | `#projetos` | Projects |
 | `#diferenciais` | WhyChazan |
-| `#cta` | CTASection (the "schedule a call" pitch) |
 | `#contato` | ContactSection (the actual contact form) |
 
 ## Component patterns

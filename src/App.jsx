@@ -6,14 +6,13 @@ import Hero           from './components/Hero'
 import Process        from './components/Process'
 import Services       from './components/Services'
 import Projects       from './components/Projects'
-import SavingsSection from './components/SavingsSection'
 import WhyChazan      from './components/WhyChazan'
-import CTASection     from './components/CTASection'
 import FAQ            from './components/FAQ'
 import ContactSection from './components/ContactSection'
 import Footer         from './components/Footer'
 import QuemSomos      from './pages/QuemSomos'
 import Software       from './pages/Software'
+import Contato        from './pages/Contato'
 
 const WhatsAppWidget  = lazy(() => import('./components/WhatsAppWidget'))
 const CookieBanner    = lazy(() => import('./components/CookieBanner'))
@@ -25,13 +24,11 @@ function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Process />
-        <Services />
         <Projects />
-        <SavingsSection />
-        <WhyChazan />
-        <CTASection />
+        <Services />
+        <Process />
         <FAQ />
+        <WhyChazan />
         <ContactSection />
       </main>
       <Footer />
@@ -64,6 +61,7 @@ export default function App() {
       <Routes>
         <Route path="/"            element={<Home />} />
         <Route path="/quem-somos"  element={<QuemSomos />} />
+        <Route path="/contato"     element={<Contato />} />
         <Route path="/software/:slug" element={<Software />} />
         <Route path="/projetos/:slug"  element={<Software />} />
       </Routes>

@@ -43,11 +43,11 @@ const DIFFERENTIALS = [
 
 export default function WhyChazan() {
   return (
-    <section id="diferenciais" className="py-24 md:py-32 bg-white line-grid">
+    <section id="diferenciais" className="py-16 md:py-24 bg-white line-grid">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-10">
           <span className="text-electric font-semibold text-sm tracking-widest uppercase">
             Por que a Chazan Tech
           </span>
@@ -65,9 +65,6 @@ export default function WhyChazan() {
             <DiffCard key={item.title} item={item} index={i} />
           ))}
         </div>
-
-        {/* Bottom note */}
-        <BottomNote />
       </div>
     </section>
   )
@@ -90,27 +87,6 @@ function DiffCard({ item, index }) {
       {/* Text */}
       <h3 className="text-deep font-semibold text-base mb-2">{item.title}</h3>
       <p className="text-deep/50 leading-relaxed text-sm">{item.description}</p>
-    </div>
-  )
-}
-
-function BottomNote() {
-  return (
-    <div className="mt-12 p-6 rounded-xl border border-electric/20 bg-electric/4">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div className="flex items-start gap-3">
-          <div className="w-5 h-5 text-electric mt-0.5 flex-shrink-0">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
-          </div>
-          <p className="text-deep/70 text-sm leading-relaxed">
-            <strong className="text-deep font-semibold">Documentação e treinamento incluídos.</strong>
-            {' '}Cada sistema entregue vem com documentação técnica e treinamento para sua equipe —
-            para que sua operação funcione de forma independente.
-          </p>
-        </div>
-      </div>
     </div>
   )
 }
