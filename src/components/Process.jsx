@@ -3,7 +3,7 @@ const STEPS = [
     number: '01',
     title: 'Diagnóstico de Processo',
     description:
-      'Mapeamos sua operação atual: onde o tempo é perdido, quais tarefas são repetitivas e onde os sistemas não se conversam. Você recebe um relatório com os pontos de maior impacto — antes de qualquer contrato.',
+      'Mapeamos onde sua equipe perde tempo e você recebe um relatório com os pontos de maior impacto, antes de qualquer contrato.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="8" />
@@ -16,7 +16,7 @@ const STEPS = [
     number: '02',
     title: 'Arquitetura e Validação',
     description:
-      'Projetamos a solução em camadas, começando pelo que traz retorno mais rápido. Você valida cada etapa antes de qualquer linha de código ir para produção.',
+      'Projetamos em camadas, começando pelo que dá retorno mais rápido. Você valida cada etapa antes de ir para produção.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 2 7 12 12 22 7 12 2" />
@@ -29,7 +29,7 @@ const STEPS = [
     number: '03',
     title: 'Desenvolvimento e Medição',
     description:
-      'Entregamos em ciclos curtos com resultado visível em cada etapa do projeto. Cada entrega vem acompanhada de métricas que provam o ganho real.',
+      'Entregas em ciclos curtos, com resultado visível e métricas que provam o ganho real de cada etapa.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -66,9 +66,9 @@ export default function Process() {
             aria-hidden="true"
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-6">
             {STEPS.map((step, i) => (
-              <StepCard key={step.number} step={step} index={i} />
+              <StepCard key={step.number} step={step} isLast={i === STEPS.length - 1} />
             ))}
           </div>
         </div>
@@ -77,29 +77,31 @@ export default function Process() {
   )
 }
 
-function StepCard({ step, index }) {
+function StepCard({ step, isLast }) {
   return (
-    <div className="relative group">
-      {/* Number bubble */}
-      <div className="flex items-center gap-4 mb-6">
+    <div className="relative group flex gap-4 lg:block">
+      {/* Number bubble + vertical connector (timeline on mobile) */}
+      <div className="flex flex-col items-center lg:block lg:mb-6">
         <div
-          className="w-10 h-10 rounded-full bg-electric/10 border border-electric/30 flex items-center justify-center
+          className="w-10 h-10 flex-shrink-0 rounded-full bg-electric/10 border border-electric/30 flex items-center justify-center
                      text-electric font-bold text-xs tracking-wider
                      group-hover:bg-electric group-hover:text-deep group-hover:border-electric transition-all duration-300"
         >
           {step.number}
         </div>
-        <div className="h-px flex-1 bg-electric/15 lg:hidden" />
+        {!isLast && <div className="w-px flex-1 mt-2 bg-electric/20 lg:hidden" aria-hidden="true" />}
       </div>
 
-      {/* Icon */}
-      <div className="w-10 h-10 text-electric/60 mb-4 group-hover:text-electric transition-colors duration-300">
-        {step.icon}
-      </div>
+      <div className={isLast ? '' : 'pb-7 lg:pb-0'}>
+        {/* Icon (desktop only) */}
+        <div className="hidden lg:block w-10 h-10 text-electric/60 mb-4 group-hover:text-electric transition-colors duration-300">
+          {step.icon}
+        </div>
 
-      {/* Text */}
-      <h3 className="text-deep font-semibold text-lg mb-3">{step.title}</h3>
-      <p className="text-deep/55 leading-relaxed text-sm">{step.description}</p>
+        {/* Text */}
+        <h3 className="text-deep font-semibold text-base lg:text-lg mb-1 lg:mb-3 pt-2 lg:pt-0">{step.title}</h3>
+        <p className="text-deep/55 leading-relaxed text-sm">{step.description}</p>
+      </div>
     </div>
   )
 }
