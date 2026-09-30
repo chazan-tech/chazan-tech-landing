@@ -142,7 +142,7 @@ export default function Navbar() {
           <Link
             key={href}
             to={href}
-            className="block py-4 text-white/80 hover:text-white text-lg font-medium border-b border-white/8 transition-colors"
+            className="block py-3.5 text-white/80 hover:text-white text-base font-medium border-b border-white/8 transition-colors"
           >
             {label}
           </Link>
