@@ -2,6 +2,10 @@ import { useState } from 'react'
 
 const FAQS = [
   {
+    q: 'Vocês vendem software pronto ou só desenvolvem sob medida?',
+    a: 'Os dois. Temos softwares prontos para contratar, como o CondFin, o Pedro (atendimento no WhatsApp), a Gestão Financeira e o Banco de Talentos, configurados para a sua operação. Quando nada pronto cabe, desenvolvemos sob medida.',
+  },
+  {
     q: 'Quanto tempo leva para ter o primeiro resultado?',
     a: 'O prazo depende da complexidade do projeto e é definido no diagnóstico inicial. Trabalhamos em ciclos curtos — cada fase já vai para produção, então você vê retorno antes de o projeto terminar.',
   },

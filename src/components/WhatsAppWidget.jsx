@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-// Substitua pelo número real com DDI (ex: 5511999999999)
-const WHATSAPP_NUMBER = "5521994097502";
+import { whatsappUrl, trackContact } from "../lib/contact";
 
 const FAQS = [
   {
@@ -59,11 +58,8 @@ export default function WhatsAppWidget() {
     const text = selected
       ? selected.q
       : "Olá! Gostaria de saber mais sobre os serviços da Chazan Tech.";
-    window.open(
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
+    trackContact("widget_whatsapp");
+    window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
   }
 
   return (

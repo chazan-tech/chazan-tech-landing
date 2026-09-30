@@ -33,7 +33,7 @@ export default function PrivacyPolicyModal({ onClose }) {
         {/* Body */}
         <div className="overflow-y-auto px-6 py-5 flex flex-col gap-5 text-white/55 text-sm leading-relaxed">
 
-          <p className="text-white/35 text-xs">Última atualização: abril de 2026</p>
+          <p className="text-white/35 text-xs">Última atualização: setembro de 2026</p>
 
           <Section title="1. Quem somos">
             A <strong className="text-white/80">Chazan Tech</strong> é responsável pelo tratamento dos dados pessoais
@@ -47,7 +47,10 @@ export default function PrivacyPolicyModal({ onClose }) {
               <li>Endereço de e-mail</li>
               <li>Assunto e mensagem</li>
             </ul>
-            Não coletamos dados de navegação, cookies de rastreamento ou informações de terceiros.
+            Se você aceitar o aviso de cookies, também usamos o Pixel da Meta (Facebook e Instagram) para medir
+            visitas e cliques no site (por exemplo, envio do formulário e cliques no WhatsApp) e para exibir anúncios
+            mais relevantes. Ele pode registrar dados de navegação, como páginas visitadas e identificadores do
+            navegador. Sem o seu aceite, esse pixel não é carregado.
           </Section>
 
           <Section title="3. Para que usamos seus dados">
@@ -56,7 +59,9 @@ export default function PrivacyPolicyModal({ onClose }) {
               <li>Responder à sua solicitação de contato ou orçamento</li>
               <li>Agendar a análise gratuita solicitada</li>
             </ul>
-            Não compartilhamos, vendemos ou cedemos seus dados a terceiros.
+            Não vendemos seus dados. Os dados de navegação coletados pelo Pixel da Meta são tratados pela Meta
+            conforme a política de privacidade dela, e você pode recusar o aviso de cookies ou limpar os dados do
+            navegador para interromper essa coleta.
           </Section>
 
           <Section title="4. Base legal">

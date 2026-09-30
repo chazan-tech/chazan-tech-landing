@@ -1,7 +1,8 @@
+import { whatsappUrl, trackContact } from "../lib/contact";
+
 const STATS = [
-  { value: "IA", label: "integrada em cada solução" },
-  { value: "Zero", label: "downtime na implantação" },
-  { value: "até 80%", label: "menos pessoas no processo após sistema" },
+  { value: "4", label: "softwares próprios prontos para contratar" },
+  { value: "Gradual", label: "implantação sem parar sua operação" },
 ];
 
 export default function Hero() {
@@ -58,9 +59,9 @@ export default function Hero() {
             className="text-white/55 text-lg md:text-xl leading-relaxed max-w-2xl mb-10
                        animate-fade-up [animation-delay:120ms]"
           >
-            Desenvolvemos sistemas sob medida com IA integrada que identificam
-            seus gargalos, automatizam o que é repetitivo e entregam resultados
-            mensuráveis — sem interromper o que já funciona.
+            Softwares e sistemas sob medida com IA que assumem o que sua equipe
+            faz na mão: atendimento no WhatsApp, boletos, cadastros, relatórios.
+            Implantamos sem interromper o que já funciona.
           </p>
 
           {/* CTAs */}
@@ -87,23 +88,23 @@ export default function Hero() {
             </a>
 
             <a
-              href="#como-funciona"
-              className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/70 font-medium px-7 py-4 rounded-lg
+              href={whatsappUrl("Olá! Vim pelo site da Chazan Tech e gostaria de conversar sobre um projeto.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackContact("hero_whatsapp")}
+              className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/80 font-medium px-7 py-4 rounded-lg
                          hover:border-electric/50 hover:text-white transition-all duration-200"
             >
-              Como funciona
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
+              Falar no WhatsApp
             </a>
 
             <a
-              href="/quem-somos"
+              href="#projetos"
               className="inline-flex items-center gap-1.5 text-white/40 hover:text-white text-sm font-medium transition-colors duration-200"
             >
-              Conheça o time
+              Ver projetos
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </a>
           </div>

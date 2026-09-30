@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { track } from '../lib/tracking'
+import { whatsappUrl, trackContact } from '../lib/contact'
 
 const INITIAL = { name: '', email: '', subject: '', message: '' }
 
@@ -35,6 +37,7 @@ export default function ContactSection() {
         }),
       })
       if (res.ok) {
+        track('Lead', { content_name: 'formulario_contato' })
         setStatus('success')
         setFields(INITIAL)
       } else {
@@ -78,7 +81,7 @@ export default function ContactSection() {
               <span className="text-electric">Conte para nós.</span>
             </h2>
             <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
-              Preencha o formulário e nossa equipe responde em até 24h. Sem compromisso.
+              Preencha o formulário ou chame direto no WhatsApp, que é o caminho mais rápido. Sem compromisso.
             </p>
           </div>
 
@@ -105,8 +108,9 @@ export default function ContactSection() {
                       <polyline points="12 6 12 12 16 14" />
                     </svg>
                   ),
-                  label: 'Tempo de resposta',
-                  value: 'Até 24 horas',
+                  label: 'WhatsApp',
+                  value: 'Resposta mais rápida',
+                  href: whatsappUrl('Olá! Vim pelo site da Chazan Tech e gostaria de conversar sobre um projeto.'),
                 },
                 {
                   icon: (
@@ -117,14 +121,26 @@ export default function ContactSection() {
                   label: 'Conversa inicial',
                   value: 'Gratuita e sem obrigação',
                 },
-              ].map(({ icon, label, value }) => (
+              ].map(({ icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4 p-5 rounded-xl border border-white/8 bg-white/3 hover:border-electric/25 transition-colors duration-200">
                   <div className="mt-0.5 flex-shrink-0 w-9 h-9 rounded-lg bg-electric/10 flex items-center justify-center">
                     {icon}
                   </div>
                   <div>
                     <p className="text-white/40 text-xs uppercase tracking-widest mb-1">{label}</p>
-                    <p className="text-white/80 text-sm font-medium">{value}</p>
+                    {href ? (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackContact('contato_whatsapp')}
+                        className="text-electric text-sm font-medium hover:text-electric-light transition-colors"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="text-white/80 text-sm font-medium">{value}</p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -141,8 +157,17 @@ export default function ContactSection() {
                   </div>
                   <h3 className="text-xl font-bold text-white">Mensagem enviada!</h3>
                   <p className="text-white/50 text-sm max-w-xs">
-                    Recebemos seu contato e retornaremos em até 24 horas.
+                    Recebemos seu contato e retornaremos em breve. Se preferir uma resposta agora, chame no WhatsApp.
                   </p>
+                  <a
+                    href={whatsappUrl('Olá! Acabei de enviar uma mensagem pelo site da Chazan Tech.')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackContact('contato_sucesso_whatsapp')}
+                    className="inline-flex items-center bg-electric text-deep font-semibold text-sm px-6 py-3 rounded-lg hover:bg-electric-light transition-colors"
+                  >
+                    Chamar no WhatsApp
+                  </a>
                   <button
                     onClick={() => setStatus('idle')}
                     className="mt-2 text-electric text-sm hover:text-electric-light transition-colors"

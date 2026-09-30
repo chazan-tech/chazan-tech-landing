@@ -1,9 +1,11 @@
-import { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { lazy, Suspense, useEffect, useRef } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { track } from './lib/tracking'
 import Navbar         from './components/Navbar'
 import Hero           from './components/Hero'
 import Process        from './components/Process'
 import Services       from './components/Services'
+import Projects       from './components/Projects'
 import SavingsSection from './components/SavingsSection'
 import WhyChazan      from './components/WhyChazan'
 import CTASection     from './components/CTASection'
@@ -11,6 +13,7 @@ import FAQ            from './components/FAQ'
 import ContactSection from './components/ContactSection'
 import Footer         from './components/Footer'
 import QuemSomos      from './pages/QuemSomos'
+import Software       from './pages/Software'
 
 const WhatsAppWidget  = lazy(() => import('./components/WhatsAppWidget'))
 const CookieBanner    = lazy(() => import('./components/CookieBanner'))
@@ -24,6 +27,7 @@ function Home() {
         <Hero />
         <Process />
         <Services />
+        <Projects />
         <SavingsSection />
         <WhyChazan />
         <CTASection />
@@ -40,12 +44,28 @@ function Home() {
   )
 }
 
+// O pixel já registra a primeira página; aqui contamos as trocas de rota dentro do site.
+function RouteTracker() {
+  const { pathname } = useLocation()
+  const first = useRef(true)
+
+  useEffect(() => {
+    if (first.current) { first.current = false; return }
+    track('PageView')
+  }, [pathname])
+
+  return null
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <RouteTracker />
       <Routes>
         <Route path="/"            element={<Home />} />
         <Route path="/quem-somos"  element={<QuemSomos />} />
+        <Route path="/software/:slug" element={<Software />} />
+        <Route path="/projetos/:slug"  element={<Software />} />
       </Routes>
     </BrowserRouter>
   )

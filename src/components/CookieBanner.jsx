@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import PrivacyPolicyModal from './PrivacyPolicyModal'
+import { initTracking } from '../lib/tracking'
 
 const STORAGE_KEY = 'chazan_cookie_consent'
 
@@ -13,6 +14,12 @@ export default function CookieBanner() {
 
   function accept() {
     localStorage.setItem(STORAGE_KEY, 'accepted')
+    initTracking()
+    setVisible(false)
+  }
+
+  function decline() {
+    localStorage.setItem(STORAGE_KEY, 'declined')
     setVisible(false)
   }
 
@@ -39,8 +46,8 @@ export default function CookieBanner() {
               <circle cx="12" cy="10" r="3"/>
             </svg>
             <p className="text-white/60 text-sm leading-relaxed">
-              Usamos cookies para melhorar sua experiência.
-              Ao continuar navegando, você concorda com nossa{' '}
+              Podemos usar cookies para medir o uso do site e mostrar anúncios (Pixel da Meta).
+              Ao aceitar, você concorda com nossa{' '}
               <button
                 onClick={() => setPolicyOpen(true)}
                 className="text-electric hover:text-electric-light underline underline-offset-2 transition-colors"
@@ -52,14 +59,22 @@ export default function CookieBanner() {
             </p>
           </div>
 
-          {/* Accept */}
-          <button
-            onClick={accept}
-            className="flex-shrink-0 bg-electric text-deep font-semibold text-sm px-5 py-2 rounded-lg
-                       hover:bg-electric-light transition-colors duration-200"
-          >
-            Aceitar
-          </button>
+          {/* Actions */}
+          <div className="flex flex-shrink-0 items-center gap-3">
+            <button
+              onClick={decline}
+              className="text-white/50 hover:text-white text-sm font-medium px-3 py-2 transition-colors duration-200"
+            >
+              Recusar
+            </button>
+            <button
+              onClick={accept}
+              className="bg-electric text-deep font-semibold text-sm px-5 py-2 rounded-lg
+                         hover:bg-electric-light transition-colors duration-200"
+            >
+              Aceitar
+            </button>
+          </div>
         </div>
       </div>
 

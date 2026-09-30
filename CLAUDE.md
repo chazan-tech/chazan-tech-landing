@@ -14,19 +14,23 @@ No linter, formatter, or test suite configured.
 
 ## Stack
 
-React 18 + Vite 6 + Tailwind CSS 3. No router (single-page, anchor-based navigation). No state management library. No backend — contact form submits via [FormSubmit.co](https://formsubmit.co) AJAX to `techchazan@gmail.com`.
+React 18 + Vite 6 + Tailwind CSS 3. React Router: `/` (home, anchor navigation), `/quem-somos` and `/software/:slug` (product pages, data in `src/data/software.js`). No state management library. No backend — contact form submits via [FormSubmit.co](https://formsubmit.co) AJAX to `contato@chazantech.com.br`.
 
 ## Architecture
 
 Single `App.jsx` that composes all sections in order:
 
 ```
-Navbar → Hero → Process → Services → SavingsSection → WhyChazan → CTASection → ContactSection → Footer
+Navbar → Hero → Process → Services → Projects → SavingsSection → WhyChazan → CTASection → FAQ → ContactSection → Footer
 ```
 
 All components are in `src/components/`. Scroll-reveal animations come from `src/hooks/useScrollAnimation.js`, which exports:
 - `useScrollAnimation(threshold)` — returns `{ ref, isVisible }` (one-shot IntersectionObserver, stays visible once triggered)
 - `staggerDelay(index, base)` — returns an inline `transitionDelay` style object for staggered card animations
+
+## Tracking
+
+`src/lib/tracking.js` loads the Meta Pixel only if `VITE_META_PIXEL_ID` is set (see `.env.example`) and the cookie banner was accepted. Events: `Lead` (contact form success), `Contact` (WhatsApp clicks, via `src/lib/contact.js`). WhatsApp number lives in `src/lib/contact.js`.
 
 ## Design tokens (tailwind.config.js)
 
@@ -47,6 +51,7 @@ All CTA buttons and nav links point to `#contato` (the contact form). Section an
 
 | `#como-funciona` | Process |
 | `#servicos` | Services |
+| `#projetos` | Projects |
 | `#diferenciais` | WhyChazan |
 | `#cta` | CTASection (the "schedule a call" pitch) |
 | `#contato` | ContactSection (the actual contact form) |

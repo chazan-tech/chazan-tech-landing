@@ -1,10 +1,10 @@
 const DIFFERENTIALS = [
   {
-    title: 'IA integrada nos sistemas',
+    title: 'IA onde ela resolve o problema',
     description:
-      'Inteligência artificial não é só buzzword — usamos IA para análise financeira automatizada, geração de relatórios e tomada de decisão. Seus dados viram ação sem precisar de uma pessoa intermediando.',
+      'Usamos IA onde ela tira trabalho da equipe: ler boletos e PDFs, conduzir atendimento no WhatsApp, gerar relatórios. Quando um fluxo sob medida resolve melhor, é ele que entregamos.',
     metric: 'IA',
-    metricLabel: 'em cada solução que desenvolvemos',
+    metricLabel: 'aplicada só quando faz diferença',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="7" y="7" width="10" height="10" rx="1.5" />
@@ -27,11 +27,11 @@ const DIFFERENTIALS = [
     ),
   },
   {
-    title: 'Zero impacto operacional',
+    title: 'Implantação sem parar a operação',
     description:
       'Integramos na sua operação atual sem migração traumática e sem parar o que já funciona. A transição é incremental e reversível em cada etapa.',
-    metric: '0',
-    metricLabel: 'horas de downtime durante implantação',
+    metric: 'Gradual',
+    metricLabel: 'cada etapa validada antes da próxima',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />

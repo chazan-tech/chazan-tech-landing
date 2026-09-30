@@ -1,3 +1,5 @@
+import { whatsappUrl, trackContact } from '../lib/contact'
+
 export default function CTASection() {
   return (
     <section id="cta" className="relative py-24 md:py-32 bg-deep overflow-hidden">
@@ -32,7 +34,8 @@ export default function CTASection() {
             operação. Você sai com clareza — independente de fechar projeto ou não.
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#contato"
             className="inline-flex items-center gap-3 bg-electric text-deep font-bold text-base px-9 py-4 rounded-lg
@@ -46,10 +49,21 @@ export default function CTASection() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
+          <a
+            href={whatsappUrl('Olá! Quero agendar uma análise gratuita com a Chazan Tech.')}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackContact('cta_whatsapp')}
+            className="inline-flex items-center gap-2 border border-white/20 text-white/80 font-medium text-base px-9 py-4 rounded-lg
+                       hover:border-electric/50 hover:text-white transition-all duration-200"
+          >
+            Chamar no WhatsApp
+          </a>
+          </div>
 
           {/* Reassurance */}
           <p className="text-white/30 text-sm mt-6">
-            Resposta em até 24h · Sem obrigação de contratar
+            Resposta rápida pelo WhatsApp · Sem obrigação de contratar
           </p>
         </div>
       </div>

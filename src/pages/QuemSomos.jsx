@@ -36,13 +36,22 @@ const VALUES = [
   },
 ]
 
+const TEAM_PHOTO = '/team/time-tecnico.jpg'
+
 const TEAM = [
   {
     initials: 'AC',
     name: 'Anna Chazan',
     role: 'Fundadora & Engenheira de Software',
-    tags: ['Técnico em Informática · CEFET Nova Friburgo', 'Sistemas de Informação · UFF'],
+    tags: ['Técnico em Informática · CEFET', 'Sistemas de Informação · UFF'],
     featured: true,
+  },
+  {
+    initials: 'RA',
+    name: 'Rebeca Azevedo',
+    role: 'Fundadora & Engenheira de Software',
+    tags: ['Técnico em Informática · CEFET', 'Sistemas de Informação · CEFET'],
+    featured: false,
   },
   {
     initials: 'TT',
@@ -146,7 +155,7 @@ function Story() {
             A Chazan Tech nasceu de uma percepção simples: a maioria das empresas convive com processos manuais não por falta de tecnologia disponível, mas por falta de quem entenda a operação antes de propor uma solução.
           </p>
           <p>
-            Nossa fundadora, Anna Chazan, tem formação técnica em Informática pelo CEFET Nova Friburgo e graduação em Sistemas de Informação pela UFF. Foi essa combinação de base técnica sólida com visão de sistemas que moldou a forma como a Chazan Tech trabalha: diagnóstico antes de código, resultado antes de contrato.
+            A Chazan Tech foi fundada por Anna Chazan e Rebeca Azevedo, amigas que decidiram construir juntas o que sentiam falta no mercado. As duas têm formação técnica em Informática pelo CEFET e graduação em Sistemas de Informação: Anna pela UFF e Rebeca pelo CEFET. Foi essa combinação de base técnica sólida com visão de sistemas que moldou a forma como a Chazan Tech trabalha: diagnóstico antes de código, resultado antes de contrato.
           </p>
           <p>
             O time foi construído com o mesmo critério: especialistas com passagem pelo CEFET e graduação na área, apaixonados por tecnologia e comprometidos com o impacto real que cada projeto gera na operação do cliente.
@@ -177,10 +186,18 @@ function Team() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {TEAM.map((member, i) => (
-          <TeamCard key={member.name} member={member} index={i} />
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-6 md:gap-8 items-stretch">
+        <img
+          src={TEAM_PHOTO}
+          alt="Time da Chazan Tech"
+          loading="lazy"
+          className="w-full h-full max-h-[560px] md:max-h-none rounded-xl border border-white/8 object-cover object-[50%_35%]"
+        />
+        <div className="flex flex-col gap-5 justify-center">
+          {TEAM.map((member, i) => (
+            <TeamCard key={member.name} member={member} index={i} />
+          ))}
+        </div>
       </div>
     </div>
   )
