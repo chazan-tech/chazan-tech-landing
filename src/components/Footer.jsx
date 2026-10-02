@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { href: '/contato',        label: 'Contato'        },
 ]
 
-const PROJECTS = ['pedro', 'condfin', 'gestao-financeira', 'banco-de-talentos', 'sempre-crianca'].map((slug) => ({
+const PROJECTS = ['condfin', 'gestao-financeira', 'banco-de-talentos', 'sempre-crianca'].map((slug) => ({
   to: `${SOFTWARE[slug].kind === 'sob-medida' ? '/projetos' : '/software'}/${slug}`,
   label: SOFTWARE[slug].name,
 }))

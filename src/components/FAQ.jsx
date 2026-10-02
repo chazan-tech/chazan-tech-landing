@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const FAQS = [
   {
     q: 'Vocês vendem software pronto ou só desenvolvem sob medida?',
-    a: 'Os dois. Temos softwares prontos para contratar, como o CondFin, o Pedro (atendimento no WhatsApp), a Gestão Financeira e o Banco de Talentos, configurados para a sua operação. Quando nada pronto cabe, desenvolvemos sob medida.',
+    a: 'Os dois. Temos softwares prontos para contratar, como o CondFin, a Gestão Financeira e o Banco de Talentos, configurados para a sua operação. Quando nada pronto cabe, desenvolvemos sob medida.',
   },
   {
     q: 'Quanto tempo leva para ter o primeiro resultado?',

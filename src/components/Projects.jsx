@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { SOFTWARE } from '../data/software'
 
 // Ordem de exibição; nome, segmento e resumo vêm de src/data/software.js.
-const ORDER = ['pedro', 'condfin', 'gestao-financeira', 'banco-de-talentos', 'sempre-crianca']
+const ORDER = ['condfin', 'gestao-financeira', 'banco-de-talentos', 'sempre-crianca']
 
 const ICONS = {
   condfin: (
