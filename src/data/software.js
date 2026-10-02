@@ -68,39 +68,39 @@ export const SOFTWARE = {
     message: 'Olá! Quero ver o sistema de Gestão Financeira da Chazan Tech funcionando.',
     images: [],
   },
-  pedro: {
-    name: 'Pedro',
-    tagline: 'Atendente de WhatsApp para lojas de celular',
-    audience: 'Lojistas de celular e assistências',
-    problem:
-      'A mesma pergunta o dia inteiro: "tem iPhone 13?", "quanto tá?", "parcela em quantas?". Enquanto você responde um, outros desistem. E o cliente que pergunta o preço, some e ninguém puxa de volta.',
-    features: [
-      {
-        title: 'Responde com o catálogo da loja',
-        text: 'Modelo, preço, estoque, garantia e horário de funcionamento, com feriados, saindo da sua planilha. Mandou três mensagens seguidas, ele espera terminar e responde uma vez.',
-      },
-      {
-        title: 'Conduz a troca de aparelho',
-        text: 'Faz as perguntas, pede as fotos e só chama você quando está tudo junto, pronto para avaliar.',
-      },
-      {
-        title: 'Retoma quem sumiu',
-        text: 'Volta ao cliente que parou no "vou pensar", um por vez e do ponto onde parou. Se alguém escreveu e ficou sem resposta, chega um aviso para você.',
-      },
-      {
-        title: 'Você assume quando quiser',
-        text: 'Responda no WhatsApp da loja e ele sai da frente só naquela conversa. Para devolver, escreva #fim. Painel de controle no Telegram.',
-      },
-    ],
-    steps: [
-      'Configuramos o Pedro com o catálogo, o horário e as regras da sua loja.',
-      'Ele atende o WhatsApp da loja e prepara o cliente para fechar.',
-      'Você entra na hora de fechar. Preço, desconto e valor de troca continuam sendo seus.',
-    ],
-    cta: 'Ver o Pedro com os aparelhos da minha loja',
-    message: 'Olá! Tenho uma loja de celular e quero ver o Pedro funcionando com o meu catálogo.',
-    images: [],
-  },
+  // pedro: {
+  //   name: 'Pedro',
+  //   tagline: 'Atendente de WhatsApp para lojas de celular',
+  //   audience: 'Lojistas de celular e assistências',
+  //   problem:
+  //     'A mesma pergunta o dia inteiro: "tem iPhone 13?", "quanto tá?", "parcela em quantas?". Enquanto você responde um, outros desistem. E o cliente que pergunta o preço, some e ninguém puxa de volta.',
+  //   features: [
+  //     {
+  //       title: 'Responde com o catálogo da loja',
+  //       text: 'Modelo, preço, estoque, garantia e horário de funcionamento, com feriados, saindo da sua planilha. Mandou três mensagens seguidas, ele espera terminar e responde uma vez.',
+  //     },
+  //     {
+  //       title: 'Conduz a troca de aparelho',
+  //       text: 'Faz as perguntas, pede as fotos e só chama você quando está tudo junto, pronto para avaliar.',
+  //     },
+  //     {
+  //       title: 'Retoma quem sumiu',
+  //       text: 'Volta ao cliente que parou no "vou pensar", um por vez e do ponto onde parou. Se alguém escreveu e ficou sem resposta, chega um aviso para você.',
+  //     },
+  //     {
+  //       title: 'Você assume quando quiser',
+  //       text: 'Responda no WhatsApp da loja e ele sai da frente só naquela conversa. Para devolver, escreva #fim. Painel de controle no Telegram.',
+  //     },
+  //   ],
+  //   steps: [
+  //     'Configuramos o Pedro com o catálogo, o horário e as regras da sua loja.',
+  //     'Ele atende o WhatsApp da loja e prepara o cliente para fechar.',
+  //     'Você entra na hora de fechar. Preço, desconto e valor de troca continuam sendo seus.',
+  //   ],
+  //   cta: 'Ver o Pedro com os aparelhos da minha loja',
+  //   message: 'Olá! Tenho uma loja de celular e quero ver o Pedro funcionando com o meu catálogo.',
+  //   images: [],
+  // },
   'sempre-crianca': {
     kind: 'sob-medida',
     name: 'Sempre Criança',
